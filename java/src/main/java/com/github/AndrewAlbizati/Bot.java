@@ -18,7 +18,7 @@ public class Bot {
     }
 
     /**
-     * Starts the Discord bot and initializes Blackjack and Help commands
+     * Starts the Discord bot and initializes commands
      */
     public void run() {
         // Start Discord bot

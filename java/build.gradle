@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+}
+
+group 'com.github.AndrewAlbizati'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.javacord:javacord:3.8.0'
+}
+
+compileJava.options.encoding = 'UTF-8'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+rootProject.tasks.named("jar") {
+    duplicatesStrategy = 'include'
+}
+
+jar {
+    doFirst {
+        manifest {
+            attributes "Main-Class": "com.github.AndrewAlbizati.Main"
+        }
+
+        from {
+            configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+        }
+    }
+    exclude 'META-INF/*.RSA', 'META-INF/*.SF','META-INF/*.DSA'
+}

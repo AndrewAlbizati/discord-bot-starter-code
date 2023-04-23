@@ -19,4 +19,4 @@ This folder contains starter code for a Discord bot written using the Javacord l
     4. `java -jar {BOT NAME}-1.0.0.jar`
 
 ## Dependencies
-- Javacord [3.7.0](https://javacord.org/)
+- Javacord [3.8.0](https://javacord.org/)
